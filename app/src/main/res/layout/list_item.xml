@@ -13,13 +13,13 @@
             android:id="@+id/sensorName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Nume Senzor" />
+            android:text="Senzor" />
 
         <TextView
             android:id="@+id/sensorValue"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Valoare Senzor" />
+            android:text="Valoare Tensiune" />
 
     </LinearLayout>
 

@@ -21,6 +21,7 @@ class MainActivity : AppCompatActivity() {
         val parola: EditText = findViewById(R.id.editTextTextPassword2)
         val buton2: Button = findViewById(R.id.button2)
 
+
         buton.setOnClickListener {
             val usr = user_name.text.toString()
             val pwd = parola.text.toString()
