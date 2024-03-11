@@ -21,3 +21,6 @@ class Senzori {
 }
 
 
+//commit1
+
+
