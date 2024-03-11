@@ -19,3 +19,5 @@ class Senzori {
         return numeSenzor
     }
 }
+
+
