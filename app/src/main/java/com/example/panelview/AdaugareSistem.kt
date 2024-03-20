@@ -11,6 +11,7 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.GeoPoint
 
 class AdaugareSistem : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -24,14 +25,16 @@ class AdaugareSistem : AppCompatActivity() {
         }
         val idS:EditText=findViewById(R.id.editTextIDSistem)
         val locatie:EditText=findViewById(R.id.editTextLocatie)
+        val latitudine:EditText=findViewById(R.id.editTextLatitudine)
+        val longitudine:EditText=findViewById(R.id.editTextLongitudine)
         val adauga:Button=findViewById(R.id.adaugare)
         adauga.setOnClickListener(){
-         adaugare(idS.text.toString(),locatie.text.toString())
+         adaugare(idS.text.toString(),locatie.text.toString(),latitudine.text.toString(),longitudine.text.toString())
 
         }
 
     }
-    fun adaugare(idS:String,locatie:String){
+    fun adaugare(idS:String,locatie:String,latitudine:String,longitudine:String){
         val db = FirebaseFirestore.getInstance()
         val user = FirebaseAuth.getInstance().currentUser
         if(user!=null){
@@ -39,7 +42,8 @@ class AdaugareSistem : AppCompatActivity() {
             val userRef = db.collection("profiles").
             document(userId).collection("sis").document(idS)
             val data = hashMapOf(
-                "locatie" to locatie
+                "locatie" to locatie,
+                "coordonate" to GeoPoint(latitudine.toDouble(),longitudine.toDouble())
             )
             userRef.set(data)
                 .addOnSuccessListener {

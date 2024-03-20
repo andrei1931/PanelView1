@@ -58,9 +58,10 @@ class MainActivity4 : AppCompatActivity() {
                 return true
             }
             R.id.action_harta -> {
+             Intent(this,HartaSisteme::class.java).also{
+                 startActivity(it)}
 
-                showToast("Opțiunea 2 selectată")
-                return true
+        return true
             }
             else -> return NavigationUI.onNavDestinationSelected(item, navController)
         }
