@@ -53,9 +53,6 @@ class AdaugareSistem : AppCompatActivity() {
                     Toast.makeText(this, "Eroare", Toast.LENGTH_SHORT).show()
                     Log.e("N", "Eroare adaugare")
                 }
-
-
-
         }
     }
 }
